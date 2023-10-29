@@ -10,6 +10,10 @@
 
 	<h1>Formulářové prvky</h1>
 
+	
+	<form action="http://formular.itgirls.cz" method="POST">
+
+ 
 	<!--
 		Formulář
 		action: adresa, kam se odesílají data
@@ -37,6 +41,40 @@
 			readonly  ... jen pro čtení, nejde do něj psát, ale hodnota se odešle na server
 			required  ... povinné pole, kontroluje prohlížeč při pokusu o odeslání
 		-->
+	
+	<label for="jmeno">Jméno</label>
+	<input 
+		type="text"
+		name="jmeno"
+		id="jmeno"
+		size="15"
+		maxlength="15"
+		placeholder="Křestní jméno"
+		autofocus
+		value="Luděk"
+		required
+	>
+	
+	<hr>
+	
+	<label for="prijmeni">Příjmení</label>
+	
+	
+	<input 
+		type="text"
+		name="prijmeni"	
+		id="prijmeni"
+		required
+	>
+
+	<hr>
+
+	<!--<input type="submit" name="tlacitko" value="Odeslat"> -->
+
+	<button type="submit" name="tlac">
+		Odeslat
+	
+	</button>
 
 
 
@@ -80,42 +118,68 @@
 			NUMBER - číslo
 			Další atributy: min, max, step
 		-->
-
+		
+		<hr>
+		<label for="cislo">Číslo</label>
+		<input type="number" 
+			name="cislo" 
+			id="cislo"
+			min="0"
+			max="100"
+		>
 
 		<!--
 			EMAIL - emailová adresa
 			URL - webová adresa
 		-->
-
+		<hr>
+		
+		<label for="email">E-mail</label>
+		<input type="email"
+			name="email"
+			id="email"
+		>
 
 		<!--
 			TEL - telefonní číslo
 			Občas se používá záměrně "nesprávně" pro zadávání čísel,
 			protože na mobilu většinou zobrazí klávesnici pouze s číslicemi 0-9.
 		-->
+		<hr>
+		<label for="telefon">Telefon</label>
+		<input type="tel" name="telefon" id="telefon">
 
 
 		<!--
 			DATE - datum
 			DATETIME-LOCAL - datum a čas
 		-->
-
+		<hr>
+		<label for="datum">Datum</label>
+		<input type="date" id="datum" name="datum">
 
 		<!--
 			PASSWORD - heslo
 			zobrazuje hvězdičky místo textu
 		-->
+		<hr>
 
-
+		<label for="heslo">Heslo</label>
+		<input type="password" id="heslo" name="heslo">
 		<!--
 			HIDDEN - skryté pole
 			Jeho hodnota value="..." se odesílá na server,
 			ale pole na stránce není vidět.
 		-->
+		<hr>
 
+		<input type="hidden" id="skryte" name="skryte">
 
+		<hr>
 
+		<input type="color" name="barva" id="barva">
 
+		<hr>
 		<!--
 			TEXTAREA - víceřádkové textové pole
 			name: nazev ple pro zpracování na serveru
@@ -124,8 +188,12 @@
 			cols: počet písmen na řádek
 			maxlength: max. počet znaků, která jdou zadat
 		 -->
+		 <label for="adresa">Bydliště</label>
+
+		 <textarea name="adresa" id="adresa" cols="50" rows="10" placeholder="Trvalé bydliště"></textarea>
 
 
+		 <hr>
 
 		<!--
 			CHECKBOX - zaškrtávácí políčko
@@ -136,9 +204,14 @@
 			checked ... pokud atribut existuje, je pole zaškrtnuté
 			disabled, required
 		-->
+		
+		<input type="checkbox" id="souhlas" name="souhlas" required>
+		<label for="souhlas"> Souhlasím s obchodními podmínkami</label>
 
 
-
+		<hr>
+		<br>
+		<br>
 		<!--
 			RADIO - přepínače (jen jeden ze skupiny může být vybraný)
 			<input type="radio">
@@ -154,7 +227,16 @@
 			disabled, required
 		-->
 
+		<fieldset>
+			<legend>Oblíbené ovoce</legend>	
+			<input type="radio" name="ovoce" id="ovoce1" value="jablko">
+			<label for="ovoce1">jablko</label>
+			<input type="radio" name="ovoce" id="ovoce2"  value="meloun" checked>
+			<label for="ovoce2">meloun</label>
+			<input type="radio" name="ovoce" id="ovoce3" value="kokos">
+			<label for="ovoce3">kokos</label>
 
+		</fieldset>	
 
 
 
@@ -174,8 +256,14 @@
 			selected ... výchozí vybraná hodnota
 		-->
 
+		<label for="mesto">Město</label>
+		<select name="mesto" id="mesto">
+			<option></option>
+			<option value="11800">Praha 8</option>
+			<option value="62800">Brno - Lesná</option>
+			<option value="47400">Ostrava - Poruba</option>
 
-
+		</select>
 
 		<!--
 			FIELDSET - seskupení polí formuláře
@@ -185,7 +273,7 @@
 		-->
 
 
-
+	</input>
 
 </body>
 </html>
